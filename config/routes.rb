@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, [:new]
+  resources :users, except: [:new]
   resources :reviews
   resources :movies
 
