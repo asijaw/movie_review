@@ -1,0 +1,26 @@
+<%= form_for @user do |f| %>
+    <%if @user.error.any? %>
+        <div id='error_message'>
+            <h2> 
+                <%= pluralize(@user.errors.count, "error") %> found:
+            </h2>
+            
+            <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class='form-attributes'>
+        <%= f.label :username %><br>
+        <%= f.text_field :username %><br>
+
+        <%= f.label :password %><br>
+        <%= f.password_field :password %><br>
+
+        <%= f.submit %>
+    </div>
+<% end %>
+
