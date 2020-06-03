@@ -1,5 +1,5 @@
 <%= form_for @user do |f| %>
-    <%if @user.error.any? %>
+    <%if @user.errors.any? %>
         <div id='error_message'>
             <h2> 
                 <%= pluralize(@user.errors.count, "error") %> found:

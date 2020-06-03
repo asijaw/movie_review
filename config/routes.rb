@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   resources :reviews
   resources :movies
 
-  get '/signup', to: 'sessions#new'
+  root 'application#home'
+
+  get '/signup', to: 'users#new'
+
+  get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+
   delete '/logout', to: 'sessions#destroy'
 end
