@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
     
     def show
         @movie = Movie.find_by(id: params[:id])
-        @reviews = @movie.reviews.build
+        @reviews = @movie.reviews
     end
 
     def new

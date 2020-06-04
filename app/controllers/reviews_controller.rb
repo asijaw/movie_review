@@ -8,6 +8,11 @@ class ReviewsController < ApplicationController
         @movie = Movie.find(:movie_id)
         @review = @movie.reviews.build(review_params)
         @review.user = current_user
+        if @review.save
+            redirect_to @movie
+        else
+            render 'new'
+        end 
     end 
 
     private
