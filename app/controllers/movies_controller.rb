@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
 
     def create 
         @movie = Movie.create(movie_params)
+        @user.movies << @movie
         redirect_to movie_path(@movie)
     end
     
@@ -21,5 +22,5 @@ class MoviesController < ApplicationController
     def movie_params
         params.require(:movie).permit(:title, :year, :genre)
     end 
-    
+
 end
