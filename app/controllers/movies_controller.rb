@@ -5,10 +5,12 @@ class MoviesController < ApplicationController
     
     def show
         @movie = Movie.find_by(id: params[:id])
+        @reviews = @movie.reviews.build
     end
 
     def new
         @movie = Movie.new
+        @book.reviews.build(params[:reviews_attr])
     end
 
     def create 
