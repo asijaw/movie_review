@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
 
     def create 
         @movie = Movie.create(movie_params)
-        @user.movies << @movie
+        @user = current_user
         redirect_to movie_path(@movie)
     end
     
