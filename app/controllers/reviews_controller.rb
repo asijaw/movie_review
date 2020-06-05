@@ -15,6 +15,19 @@ class ReviewsController < ApplicationController
         end 
     end 
 
+    def index
+        if params[:movie_id]
+            @reviews = Movie.find(params[:movie_id]).reviews
+        else
+            @reviews = Review.all
+        end
+    end
+    
+    def show
+        @review = Review.find(params[:id])
+        @movie = @review.movie
+    end
+
     private
 
     def review_params

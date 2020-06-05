@@ -1,0 +1,9 @@
+<% @reviews.each do |review| %>
+    <p>
+        <strong><%= review.movie.title %></strong></br>
+        <%= review.content %></br>
+        <%= review.rating %> stars</br>
+        by: <%= link_to review.user.username, movie_reviews_path(review.movie) %>
+    </p>
+
+<% end %>

@@ -2,8 +2,8 @@
 <p><strong>Year:</strong> <%= @movie.year %></p>
 <p><strong>Genre:</strong> <%= @movie.genre %></p>
 
-<%= link_to "View Reviews", movie_review_path(@reviews) %>
+<%= link_to "View Reviews", movie_review(@movie) %>
 <% if logged_in? %>
-    <%= link_to "Add Reviews", new_review_path(@reviews) %>
+    <%= link_to "Add Reviews", new_review_path(@movie) %>
 <% end %>
 
