@@ -1,0 +1,13 @@
+<%= form_for @review do |f| %>
+    
+    <%= f.label :content %></br>
+    <%= f.text_area :content %></br>
+
+    <%= f.label :rating %></br>
+    <%= f.number_field :rating %></br>
+
+    <%= f.hidden_field :movie_id, value: current_user %></br>
+
+    <%= f.submit %>
+<% end %>
+

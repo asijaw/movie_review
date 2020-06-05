@@ -6,6 +6,9 @@
     Genre: <%= movie.genre %><br>
     
     <%= link_to "View Reviews", movie_reviews_path(movie.id) %>
+    <% if logged_in? %>
+        <%= link_to "Add Reviews", new_movie_review_path(movie.id) %>
+    <% end %>
 
     
 <% end %>
