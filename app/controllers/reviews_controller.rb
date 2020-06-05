@@ -18,6 +18,8 @@ class ReviewsController < ApplicationController
     def index
         if params[:movie_id]
             @reviews = Movie.find(params[:movie_id]).reviews
+        elsif params[:user_id]
+            @reviews = Movie.find(params[:user_id]).reviews
         else
             @reviews = Review.all
         end
