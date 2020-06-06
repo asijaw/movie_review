@@ -9,15 +9,22 @@ class MoviesController < ApplicationController
     end
 
     def new
-        @movie = Movie.new
-        @book.reviews.build(params[:reviews_attr])
+        if logged_in?
+            @movie = Movie.new
+            @book.reviews.build(params[:reviews_attr])
+        else
+            redirect_to login_path
+        end 
     end
 
     def create 
-        @movie = Movie.create(movie_params)
+        @movie = Movie.new(movie_params)
         @user = current_user
-        
-        redirect_to movie_path(@movie)
+        if @movie.save
+            redirect_to movie_path(@movie)
+        else
+            render 'new'
+        end
     end
     
     private
