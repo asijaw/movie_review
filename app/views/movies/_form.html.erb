@@ -1,24 +1,38 @@
 <%= form_for @movie do |f| %>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %><br>
-
-    <%= f.label :year %><br>
-    <%= f.number_field :year %><br>
-
-    <%= f.label :genre %><br>
-    <%= f.text_field :genre %><br>
-
-    <%= f.fields_for :reviews, @movie.reviews.build do |review| %>
-        <h3>Your Review:</h3>
-        <%= review.label :content %><br>
-        <%= review.text_area :content %><br>
-
-        <%= review.label :rating %><br>
-        <%= review.number_field :rating %><br>
-
-        <%= review.hidden_field :user_id, value: current_user %>
+    <% if @movie.errors.any? %>
+        <div id="error_explanation">
+            The form contains <%= pluralize(object.errors.count, "error") %>.
+        
+            <ul>
+            <% @movie.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
     <% end %>
 
-    <%= f.submit %>
+    <div class="form">
+        <%= f.label :title %><br>
+        <%= f.text_field :title %><br>
+
+        <%= f.label :year %><br>
+        <%= f.number_field :year %><br>
+
+        <%= f.label :genre %><br>
+        <%= f.text_field :genre %><br>
+
+        <%= f.fields_for :reviews, @movie.reviews.build do |review| %>
+            <h3>Your Review:</h3>
+            <%= review.label :content %><br>
+            <%= review.text_area :content %><br>
+
+            <%= review.label :rating %><br>
+            <%= review.number_field :rating %><br>
+
+            <%= review.hidden_field :user_id, value: current_user %>
+        <% end %>
+    
+        <%= f.submit %>
+    </div>
 <% end %>
     

@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
     def new
         if logged_in?
             @movie = Movie.new
-            @book.reviews.build(params[:reviews_attr])
+            @movie.reviews.build(params[:reviews_attr])
         else
             redirect_to login_path
         end 
