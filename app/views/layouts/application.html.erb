@@ -10,6 +10,39 @@
   </head>
 
   <body>
+  <div class="navbar">
+  
+  <% if logged_in?%>
+    <a href="/logout"> Logout </a>
+  <% end %>
+
+  <a href="/movies"> View All Movies </a>
+
+  <a href="/movie/new"> Create New Movie</a>
+
+  <a href="/">Home</a>
+
+</div>
+
     <%= yield %>
   </body>
 </html>
+
+<style>
+.navbar {
+  background-color: #a5abad;
+  overflow: hidden;
+  margin: 0;
+}
+
+.navbar a {
+  float: right;
+  color: #000000;
+  /* text-align: center; */
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+</style>
+
