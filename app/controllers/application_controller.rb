@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
     
     def home
-        redirect_to login_path
+        render 'layouts/welcome'
     end 
 
     def current_user
