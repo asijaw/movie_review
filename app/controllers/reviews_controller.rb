@@ -30,6 +30,13 @@ class ReviewsController < ApplicationController
         @movie = @review.movie
     end
 
+    def destroy
+        @review = current_user.reviews.find(params[:id])
+        @review.destroy
+        flash[:notice] = "Review deleted"
+        redirect_to user_path(current_user)
+      end
+
     private
 
     def review_params

@@ -1,1 +1,16 @@
-<%= @user.username %>
+<h1>Hello, <%= @user.username.capitalize %> !</h1>
+
+<h3> You have made <%= pluralize(@user.reviews.count,"review") %></h3>
+<% @user.reviews.each.with_index(1) do |review, i| %>
+    <%= "#{i}" %>. <strong>Movie:</strong> <%= link_to review.movie.title, movie_path(review.movie) %><br>
+      
+    <strong>Review:</strong> " <%= review.content %> " <br>
+    <%= review.rating %> stars<br>
+
+    Posted: <%= review.created_at %><br>
+      
+    <% if current_user == review.user %>
+        <%= link_to "edit", edit_user_review_path(current_user, review)  %> -
+        <%= link_to "delete", user_review_path(current_user, review), method: :delete %><br>
+    <% end %>
+<% end %>
