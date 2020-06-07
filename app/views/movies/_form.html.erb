@@ -1,7 +1,7 @@
 <%= form_for @movie do |f| %>
     <% if @movie.errors.any? %>
         <div id="error_explanation">
-            The form contains <%= pluralize(object.errors.count, "error") %>.
+            The form contains <%= pluralize(@movie.errors.count, "error") %>.
         
             <ul>
             <% @movie.errors.full_messages.each do |msg| %>
