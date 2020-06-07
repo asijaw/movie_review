@@ -10,21 +10,25 @@
   </head>
 
   <body>
-  <div class="navbar">
-  
-  <% if logged_in?%>
-    <a href="/logout"> Logout </a>
-  <% end %>
 
-  <a href="/movies"> View All Movies </a>
+    <div class="navbar">
+      <% if logged_in?%>
+        <a href="/logout"> Log Out </a>
+      <% end %>
 
-  <a href="/movies/new"> Create New Movie</a>
+      <a href="/movies"> View All Movies </a>
 
-  <a href="/">Home</a>
+      <a href="/movies/new"> Create New Movie</a>
 
-</div>
+      <a href="/">Home</a>
+    </div>
 
-    <%= yield %>
+    <div class="container">
+      <% flash.each do |key, message| %>
+        <div class="alert alert-<%= key %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
 
