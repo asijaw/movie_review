@@ -1,0 +1,8 @@
+<h1>Top 5 Movies</h1>
+
+<% @top_five.each do |m| %>
+
+    <%= link_to m.movie.title, movie_path(m) %><br>
+   
+
+<% end %>

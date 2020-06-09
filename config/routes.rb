@@ -19,9 +19,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :delete] do
     resources :reviews
-end
+  end
 
-
+  get '/top_five', to: 'reviews#top_five_movies'
   
 
 end

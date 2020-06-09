@@ -35,7 +35,11 @@ class ReviewsController < ApplicationController
         @review.destroy
         flash[:notice] = "Review deleted"
         redirect_to user_path(current_user)
-      end
+    end
+
+    def top_five_movies
+        @top_five = Review.top_five_movies
+    end 
 
     private
 
