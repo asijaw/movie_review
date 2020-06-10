@@ -18,8 +18,23 @@ class SessionsController < ApplicationController
         end
     end 
 
+    def oauth 
+        @user = User.find_or_create_by(auth) 
+        
+        session[:user_id] = @user.id
+        redirect_to @user
+    end 
+
     def destroy 
         session.clear
         redirect_to root_path
     end 
+
+    private
+    def session_params
+        params.require(:user).permit()
+    
+    def auth
+        request.env['omniauth.auth']
+    end
 end 
