@@ -21,7 +21,7 @@
         <%= f.label :genre %><br>
         <%= f.text_field :genre %><br>
 
-        <%= f.fields_for :reviews, @movie.reviews.build do |review| %>
+        <%= f.fields_for :reviews, @review do |review| %>
             <h3>Your Review:</h3>
             <%= review.label :content %><br>
             <%= review.text_area :content %><br>
@@ -29,7 +29,7 @@
             <%= review.label :rating %><br>
             <%= review.number_field :rating %><br>
 
-            <%= review.hidden_field :user_id, value: current_user %>
+            <%= review.hidden_field :user_id, value: current_user.id %>
         <% end %>
     
         <%= f.submit %>

@@ -4,6 +4,11 @@ class ReviewsController < ApplicationController
         @review = Review.new
     end 
 
+    def edit
+        @review = Review.find(params[:id])
+    end
+
+
     def create
         @movie = Movie.find_by(params[:movie_id])
         @review = @movie.reviews.build(review_params)

@@ -19,11 +19,8 @@ class SessionsController < ApplicationController
     end 
 
     def oauth 
-        @user = User.find_or_create_by(uid: auth['uid']) do |u|
-            u.username = auth['info']['name']
-            u.email = auth['info']['email']
-            u.image = auth['info']['image']
-          end
+        @user = User.from_omniauth(auth)
+            
         
         session[:user_id] = @user.id
         redirect_to @user

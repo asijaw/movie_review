@@ -11,7 +11,8 @@ class MoviesController < ApplicationController
     def new
         if logged_in?
             @movie = Movie.new
-            @movie.reviews.build(params[:reviews_attr])
+            
+            @review = @movie.reviews.build
         else
             redirect_to login_path
         end 
@@ -19,6 +20,7 @@ class MoviesController < ApplicationController
 
     def create 
         @movie = Movie.new(movie_params)
+        
         @user = current_user
         if @movie.save
             redirect_to movie_path(@movie)
@@ -30,7 +32,7 @@ class MoviesController < ApplicationController
     private
 
     def movie_params
-        params.require(:movie).permit(:title, :year, :genre, review_attr: [:content, :rating, :user_id, :movie_id])
+        params.require(:movie).permit(:title, :year, :genre, reviews_attributes: [:content, :rating, :user_id, :movie_id])
     end 
 
 end
