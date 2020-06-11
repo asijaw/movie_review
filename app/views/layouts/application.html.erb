@@ -13,13 +13,14 @@
 
     <div class="navbar">
       <% if logged_in?%>
-        <a href="/logout"> Log Out </a>
+        <%= link_to "Log Out", logout_url %>
         <%= link_to "Profile", user_path(current_user) %>
+        <%= link_to "New Movie", new_movie_url %>
       <% end %>
 
-      <a href="/movies"> View All Movies </a>
+      <%= link_to "Reviews", movies_url %>
 
-      <a href="/movies/new"> Create New Movie</a>
+      
 
       <%= link_to "Home", root_path %>
     </div>
