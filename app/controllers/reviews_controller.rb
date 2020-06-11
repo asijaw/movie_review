@@ -6,7 +6,20 @@ class ReviewsController < ApplicationController
 
     def edit
         @review = Review.find(params[:id])
+        @movie = @review.movie
+        @user = current_user
     end
+
+    def update 
+        @review = Review.find(params[:id])
+        @movie = @review.movie
+        if @review.update(review_params)
+            flash[:notice] = "Review has been updated!"
+            redirect_to user_path(current_user)
+        else
+            render :edit
+        end
+    end 
 
 
     def create
@@ -38,7 +51,7 @@ class ReviewsController < ApplicationController
     def destroy
         @review = current_user.reviews.find(params[:id])
         @review.destroy
-        flash[:notice] = "Review deleted"
+        flash[:notice] = "Review has been deleted"
         redirect_to user_path(current_user)
     end
 
