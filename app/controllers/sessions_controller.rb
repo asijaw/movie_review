@@ -13,15 +13,13 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id 
             redirect_to @user
         else
-            flash[:alert] = "Invalid entry, please try again"
+            flash[:alert] = "Invalid entry, username/password mismatch"
             render 'new'
         end
     end 
 
     def oauth 
         @user = User.from_omniauth(auth)
-            
-        
         session[:user_id] = @user.id
         redirect_to @user
     end 
