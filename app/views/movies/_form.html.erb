@@ -16,7 +16,7 @@
         <%= f.text_field :title %><br>
 
         <%= f.label :year %><br>
-        <%= f.number_field :year %><br>
+        <%= f.number_field :year, :min=>'1900', max: Date.today.year %><br>
 
         <%= f.label :genre %><br>
         <%= f.text_field :genre %><br>
