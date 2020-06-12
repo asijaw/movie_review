@@ -16,7 +16,7 @@
     <%= f.text_area :content %></br>
 
     <%= f.label :rating %></br>
-    <%= f.number_field :rating %></br>
+    <%= f.number_field :rating, :in => 0..5, :step => '.1'%></br>
 
     <%= f.hidden_field :movie_id %></br>
 

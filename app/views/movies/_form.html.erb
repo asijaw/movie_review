@@ -27,7 +27,7 @@
             <%= review.text_area :content %><br>
 
             <%= review.label :rating %><br>
-            <%= review.number_field :rating %><br>
+            <%= review.number_field :rating, :in => 0..5, :step => '.1' %><br>
 
             <%= review.hidden_field :user_id, value: current_user.id %>
         <% end %>

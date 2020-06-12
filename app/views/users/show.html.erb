@@ -2,7 +2,7 @@
 
 <h3> You have made <%= pluralize(@user.reviews.count,"review") %></h3>
 <% @user.reviews.each do |review| %>
-    <strong>Movie:</strong> <%= link_to review.movie.title, movie_path(review.movie) %><br>
+    <h2><%= link_to review.movie.title.titleize, movie_path(review.movie) %></h2>
       
     <strong>Your Review:</strong> "<%= review.content %>" <br>
     <strong>Your Rating:</strong> <%= pluralize(review.rating,"star") %><br>
