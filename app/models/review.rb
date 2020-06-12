@@ -8,5 +8,5 @@ class Review < ApplicationRecord
     scope :top_five_movies, -> {order(rating: :desc).limit(5)}
 
     #scope :most_popular_movies, -> {order(rating: :desc).average}
-
+    
 end
