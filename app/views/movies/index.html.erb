@@ -1,7 +1,7 @@
 <h1>The Movie Madness</h1>
 <% collection = @movies.order(title: :asc) %>
 <% collection.each do |movie| %>
-    <h3><%= movie.title %></h3><br>
+    <h3><%= movie.title.titleize %></h3><br>
     Year: <%= movie.year %><br>
     Genre: <%= movie.genre %><br>
     
