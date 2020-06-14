@@ -1,8 +1,8 @@
-<%= form_for @review do |f| %>
+<%= form_for([@movie, @review]) do |f| %>
 
     <% if @review.errors.any? %>
         <div id="error_explanation">
-            The form contains <%= pluralize(object.errors.count, "error") %>.
+            The form contains <%= pluralize(@review.errors.count, "error") %>.
         
             <ul>
             <% @review.errors.full_messages.each do |msg| %>
@@ -18,7 +18,7 @@
     <%= f.label :rating %></br>
     <%= f.number_field :rating, :in => 0..5, :step => '.1'%></br>
 
-    <%= f.hidden_field :movie_id %></br>
+    <%= f.hidden_field :movie_id, value: @movie.id %>
 
     <%= f.submit %>
 

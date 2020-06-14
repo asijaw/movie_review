@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
     def new 
         @review = Review.new
+    
     end 
 
     def edit
@@ -27,8 +28,9 @@ class ReviewsController < ApplicationController
         @movie = Movie.find_by(params[:movie_id])
         @review = @movie.reviews.build(review_params)
         @review.user = current_user
+       
         if @review.save
-            redirect_to movie_reviews_path(@movie.id)
+            redirect_to movie_reviews_path(@movie)
         else
             render 'new'
         end 

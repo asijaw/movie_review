@@ -1,11 +1,12 @@
 class MoviesController < ApplicationController
     def index
         @movies = Movie.all
+        
     end
     
     def show
         @movie = Movie.find_by(id: params[:id])
-        @reviews = @movie.reviews
+        @review = @movie.reviews
     end
 
     def new
@@ -16,6 +17,7 @@ class MoviesController < ApplicationController
             redirect_to login_path
         end 
     end
+
 
     def create 
         @movie = Movie.new(movie_params)
