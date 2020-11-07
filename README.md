@@ -1,7 +1,11 @@
-<h1>Movie Review</h1>
+# Movie Review
 
-This is a web application that allows the user to make movie reviews and see the reviews on movies that other users have created . It is built with Ruby.
-<h2>To run this app</h2>
+This is a Rails app built in Ruby as a portfolio project for the Flatiron School Software Engineering curriculum.
+
+
+This is a web application that allows the user to create an account using google or username. Once logged in, users are able to make movie reviews and see the reviews on movies that other users have created
+
+## Installation
 
 Fork and Clone this repo
 
@@ -16,10 +20,18 @@ Follow the local address link given in your terminal
 
 Create an account and then you are free to navigate around the site 
 
+## Contributing
 
-<h2>License</h2>
+Contributions are welcome if you have an idea for updates
 
-Copyright 2020
+## Authors:
+
+Asija Watson - @asijaw
+
+## License
+
+The gem is available as open source under the terms of the MIT License 
+Copyright <2020> 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
