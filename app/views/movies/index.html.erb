@@ -7,10 +7,10 @@
     
     <%= link_to "View Reviews", movie_reviews_path(movie.id) %>
     
-    <% if false %>
+    
     <% if logged_in? %>
         <%= link_to "Add Reviews", new_movie_review_path(movie) %>
     <% end %>
-    <% end %>
+
     
 <% end %>

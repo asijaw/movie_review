@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
     def new 
         @review = Review.new
+        @movie = Movie.find(params[:movie_id])
     
     end 
 
@@ -25,7 +26,7 @@ class ReviewsController < ApplicationController
 
 
     def create
-        @movie = Movie.find_by(params[:movie_id])
+        @movie = Movie.find_by(id: params[:movie_id])
         @review = @movie.reviews.build(review_params)
         @review.user = current_user
        

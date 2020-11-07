@@ -1,24 +1,28 @@
-# README
+<h1>Movie Review</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a web application that allows the user to make movie reviews and see the reviews on movies that other users have created . It is built with Ruby.
+<h2>To run this app</h2>
 
-Things you may want to cover:
+Fork and Clone this repo
 
-* Ruby version
+`cd` into the project folder
 
-* System dependencies
+Run `bundle install` 
+    then `rails db:migrate`
+    then `rails db:seed`
+    then `rails s` in your terminal
 
-* Configuration
+Follow the local address link given in your terminal
 
-* Database creation
+Create an account and then you are free to navigate around the site 
 
-* Database initialization
 
-* How to run the test suite
+<h2>License</h2>
 
-* Services (job queues, cache servers, search engines, etc.)
+Copyright 2020
 
-* Deployment instructions
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-* ...
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
